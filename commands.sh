@@ -1,5 +1,7 @@
 rails new LearningRubyOnRails -T --database=postgresql
 
+# rails new LearningRubyOnRails -T --database=postgresql --api
+
 rails s
 
 rails db:migrate
