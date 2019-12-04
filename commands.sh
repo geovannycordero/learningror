@@ -17,11 +17,14 @@ rails db:migrate
 rails g scaffold Blog title:string body:text
 
 # Generate a controller Pages with his pages
-# A controlles does not have attributes
+# A controller does not have attributes
 rails g controller Pages home about contact
 
 # Generate a model with his attributes
 rails g model Skill title:string percent_utilized:integer
+
+# Generate a resource, very skiny or minimalistic scaffold
+rails g resource Portafolio title:string subtitle:string body:text main_image:text thumb_image:text
 
 # (Optional) Paste that on the file config/application.rb inside the class
 ```
