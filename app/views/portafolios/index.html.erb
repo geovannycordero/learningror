@@ -4,5 +4,6 @@
   <h2><%= portafolio_item.title %></h2>
   <h3><%= portafolio_item.subtitle %></h3>
   <p><%= portafolio_item.body %></p>
-  <%= image_tag portafolio_item.thumb_image %>
+  <%= image_tag portafolio_item.thumb_image if !portafolio_item.thumb_image.nil? %>
+  <!-- <%= image_tag portafolio_item.thumb_image unless portafolio_item.thumb_image.nil? %> -->
 <% end %>
