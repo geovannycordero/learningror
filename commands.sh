@@ -44,3 +44,6 @@ sudo -u postgres psql -d databasename
 # Give permissions to username on the schema_migrations create_table
 # Useful to do db:migrate
 alter table schema_migrations owner to username;
+
+# Let the user create a db
+alter user username createdb;
