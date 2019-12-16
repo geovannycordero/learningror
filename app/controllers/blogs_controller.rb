@@ -1,5 +1,5 @@
 class BlogsController < ApplicationController
-  before_action :set_blog, only: [:show, :edit, :update, :destroy]
+  before_action :set_blog, only: [:show, :edit, :update, :destroy, :toggle_status]
 
   # GET /blogs
   def index
@@ -33,11 +33,10 @@ class BlogsController < ApplicationController
   end
 
   # PATCH/PUT /blogs/1
-
   def update
     respond_to do |format|
       if @blog.update(blog_params)
-        format.html { redirect_to @blog, notice: 'Blog was successfully updated.' }
+        format.html { redirect_to @blog, notice: 'Blog was successfully updated' }
       else
         format.html { render :edit }
       end
@@ -48,8 +47,17 @@ class BlogsController < ApplicationController
   def destroy
     @blog.destroy
     respond_to do |format|
-      format.html { redirect_to blogs_url, notice: 'Blog was successfully destroyed.' }
+      format.html { redirect_to blogs_url, notice: 'Blog was successfully destroyed' }
     end
+  end
+
+  def toggle_status
+    if @blog.published?
+      @blog.draft!
+    elsif @blog.draft?
+      @blog.published!
+    end
+    redirect_to blogs_url, notice: 'Post status has been updated'
   end
 
   private
