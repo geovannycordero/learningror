@@ -1,8 +1,20 @@
 Rails.application.routes.draw do
-  resources :portafolios
-  get 'pages/home'
-  get 'pages/about'
-  get 'pages/contact'
+  namespace :admin do
+    get 'dashboard/main'
+    get 'dashboard/user'
+    get 'dashboard/blog'
+  end
+
+  get 'about', to: 'pages#about'
+  get 'contact', to: 'pages#contact'
+
   resources :blogs
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :posts
+
+  get 'posts/missing', to: 'posts#show'
+
+  root to: 'pages#home'
+
+  get 'query/:else/:another', to: 'pages#something'
+
 end
