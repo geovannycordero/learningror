@@ -36,21 +36,4 @@ ActiveRecord::Schema.define(version: 2019_12_16_195746) do
     t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
   end
 
-  create_table "portafolios", force: :cascade do |t|
-    t.string "title"
-    t.string "subtitle"
-    t.text "body"
-    t.text "main_image"
-    t.text "thumb_image"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "skills", force: :cascade do |t|
-    t.string "title"
-    t.integer "percent_utilized"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
 end
