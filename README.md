@@ -2,7 +2,7 @@
 
 ### From devCamp, Udemy
 
-**Started at:** October 30, 2019
+**Started at:** December 2, 2019
 
 **Motivation:** First time with Ruby on Rails. Part of the training in the Apprentice Program at Pernix. One of the first web frameworks that I learn.
 
