@@ -1,24 +1,64 @@
-# README
+# Ruby on Rails training
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### From devCamp, Udemy
 
-Things you may want to cover:
+**Started at:** October 30, 2019
 
-* Ruby version
+**Motivation:** First time with Ruby on Rails. Part of the training in the Apprentice Program at Pernix. One of the first web frameworks that I learn.
 
-* System dependencies
+**Scope:** Portfolio application. Using generators and generating resources from scratch.
 
-* Configuration
+**Lessons Learned:** .
 
-* Database creation
+**Credits:** to @andreaabarca for review the code.
 
-* Database initialization
+# Setup
+Steps necessary to get the application up and running.
 
-* How to run the test suite
+### System dependencies
+Ruby version: 2.7.0
 
-* Services (job queues, cache servers, search engines, etc.)
+Rails version: 6.0.2
 
-* Deployment instructions
+### Install the dependencies
+```bash
+$ bundle install
+$ yarn install
+```
 
-* ...
+### Database
+
+#### (Recomended) PostgreSQL
+Create a user specific for this application with his respective permissions.
+
+```bash
+$ sudo -u postgres psql
+$ create role ruby with createdb;
+$ alter role ruby with password 'rubyonrails';
+$ alter role ruby with login;
+```
+
+#### Credentials
+Copy the database.yml.template to a new file called database.yml.
+```bash
+cp config/database.yml config/database.yml.template
+```
+
+Change the values correctly to run in your environment. Now you can create the database.
+
+#### Database creation
+```bash
+rails db:create
+```
+
+#### Database initialization
+```bash
+rails db:migrate
+```
+
+### Run local server
+```bash
+rails server
+```
+
+The server is running locally at http://localhost:3000/, go to your browser and open this URL.
