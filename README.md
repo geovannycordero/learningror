@@ -56,6 +56,12 @@ rails db:create
 rails db:migrate
 ```
 
+#### Create test data
+Fromm the seed file
+```bash
+rails db:setup
+```
+
 ### Run local server
 ```bash
 rails server
