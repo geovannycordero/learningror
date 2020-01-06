@@ -29,13 +29,13 @@ $ yarn install
 ### Database
 
 #### (Recomended) PostgreSQL
-Create a user specific for this application with his respective permissions.
+Create a user specific for this application with his respective permissions. Change the name and the password as you wish.
 
 ```bash
 $ sudo -u postgres psql
-$ create role ruby with createdb;
-$ alter role ruby with password 'rubyonrails';
-$ alter role ruby with login;
+$ create role rolename with password 'rolepassword';
+$ alter role rolename with createdb;
+$ alter role rolename with login;
 ```
 
 #### Credentials
@@ -44,7 +44,7 @@ Copy the database.yml.template to a new file called database.yml.
 cp config/database.yml config/database.yml.template
 ```
 
-Change the values correctly to run in your environment. Now you can create the database.
+Change the values correctly to match with you local database credentials. Now you can create the database.
 
 #### Database creation
 ```bash
@@ -57,7 +57,7 @@ rails db:migrate
 ```
 
 #### Create test data
-Fromm the seed file
+From the seed file
 ```bash
 rails db:setup
 ```
