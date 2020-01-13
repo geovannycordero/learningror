@@ -1,20 +1,29 @@
 <h1>Create a new Portafolio</h1>
 
-<%= form_with(model: @portafolio_item, local: true) do |form| %>
+<%= form_for(@portafolio_item) do |form| %>
   <div class="field">
     <%= form.label :title %>
     <%= form.text_field :title %>
   </div>
 
   <div class="field">
-    <%= form.label :sub_title %>
-    <%= form.text_area :sub_title %>
+    <%= form.label :subtitle %>
+    <%= form.text_area :subtitle %>
   </div>
 
   <div class="field">
     <%= form.label :body %>
     <%= form.text_area :body %>
   </div>
+
+  <ul>
+    <%= form.fields_for :technologies do |technology_form| %>
+      <li>
+        <%= technology_form.label :name %>
+        <%= technology_form.text_field :name %>
+      </li>
+    <% end %>
+  </ul>
 
   <div class="actions">
     <%= form.submit %>
